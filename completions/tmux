@@ -8,7 +8,7 @@ _tmux()
 	local cur prev words cword;
 	_init_completion || return;
 	if [[ $cword -eq 1 ]]; then
-		COMPREPLY=($( compgen -W "$(tmux list-commands | cut -d' ' -f1)" -- "$cur" ));
+		COMPREPLY=($( compgen -W "$(tmux start\; list-commands | cut -d' ' -f1)" -- "$cur" ));
 		return 0
 	fi
 }
